@@ -7,6 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+User.destroy_all
+Game.destroy_all
+Subscription.destroy_all
+
 10.times do
     User.create(user_name:Faker::Lorem.word,
                 first_name:Faker::Name.first_name,
@@ -14,3 +18,16 @@ require 'faker'
                 email:Faker::Internet.email,
                 password:Faker::Internet.password)
 end
+
+50.times do
+    Game.create(title:Faker::Game.title,
+                platform:Faker::Game.platform)
+end
+
+10.times do
+    Subscription.create(term:Faker::Subscription.subscription_term,
+                        user_id: User.all.sample.id,
+                        game_id: Game.all.sample.id)
+end
+
+

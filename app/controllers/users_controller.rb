@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+    skip_before_action :verify_authenticity_token
+
+
     def new
         @user = User.new
     end
@@ -26,7 +29,7 @@ class UsersController < ApplicationController
     def update
         @user = User.find(params[:id])
         if @user.update(user_params)
-            redirect_to @user
+            redirect_to user_path(@user)
         else
             render :edit
         end

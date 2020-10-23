@@ -1,6 +1,6 @@
 <h2>Sign Up Here!</h2>
 
-<%= form_tag users_path, method: 'post' do %>
+<%= form_tag @user, method: 'post' do %>
     <% if @user.errors.any? %>
         <div id="error_message">
             <h4>The following errors have occurred:</h4>

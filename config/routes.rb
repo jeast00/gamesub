@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  
+  # Create custom routes 
+  get '/signup' => 'users#new'
+  post '/signup' => 'users#create'
+  
+  
   resources :subscriptions
   resources :games
   resources :users

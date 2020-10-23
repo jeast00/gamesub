@@ -23,7 +23,7 @@ class SubscriptionsController < ApplicationController
     end
 
     def update
-
+        
     end
 
     def destroy

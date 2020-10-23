@@ -1,2 +1,13 @@
 <h2>Log In</h2>
 
+<%= form_tag sessions_path do %>
+    <%= label_tag :user_name %>
+    <%= text_field_tag :user_name %><br><br>
+
+    <%= label_tag :password %>
+    <%= password_field_tag :password %><br><br>
+
+    <%= submit_tag "log in" %>
+<% end %>
+
+<p>Don't have an account? <%= link_to "Sign up", "/signup" %> here!</p>

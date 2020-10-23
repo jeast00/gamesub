@@ -5,11 +5,17 @@ class SubscriptionsController < ApplicationController
     end
 
     def show
-
+        @subscription = Subscription.find(params[:id])
     end
 
     def create
+        @subscription = Subscription.new(subscription_params)
 
+        if @subscription.save
+
+        else
+            render :new
+        end
     end
 
     def edit
@@ -21,7 +27,9 @@ class SubscriptionsController < ApplicationController
     end
 
     def destroy
-
+        @subscription = Subscription.find(params[:id])
+        @subscription.destroy
+        redirect_to user_path(@user)
     end
 
     private

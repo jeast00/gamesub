@@ -1,6 +1,6 @@
 <h2>Sign Up Here!</h2>
 
-<%= form_for users_path, url:'/signup' do |f| %>
+<%= form_for @user, url:'/signup' do |f| %>
     <%= f.label :user_name %>
     <%= f.text_field :user_name %><br><br>
 

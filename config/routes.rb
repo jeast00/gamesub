@@ -8,6 +8,7 @@ root 'sessions#new'
   get '/login' => 'sessions#new'
   post '/sessions' => 'sessions#create'
   delete '/sessions/' => 'sessions#destroy'
+  get '/auth/:provider/callback' => 'sessions#create'
   
   resources :subscriptions
   

@@ -1,8 +1,8 @@
 <h2>Log In</h2>
 
 <%= form_tag sessions_path do %>
-    <%= label_tag :user_name %>
-    <%= text_field_tag :user_name %><br><br>
+    <%= label_tag :email %>
+    <%= text_field_tag :email %><br><br>
 
     <%= label_tag :password %>
     <%= password_field_tag :password %><br><br>
@@ -11,3 +11,5 @@
 <% end %>
 
 <p>Don't have an account? <%= link_to "Sign up", "/signup" %> here!</p>
+
+<p><%= link_to "Log in with GitHub", "/auth/github" %></p>

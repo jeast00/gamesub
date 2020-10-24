@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   #start app with root route
-root 'sessions#new'
-
+  root 'sessions#new'
   # Create custom routes 
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
@@ -10,13 +9,9 @@ root 'sessions#new'
   delete '/sessions/' => 'sessions#destroy'
   get '/auth/:provider/callback' => 'sessions#create'
   
-  resources :subscriptions
+  resources :users
   
   resources :games do
-    resources :subscriptions
-  end
-
-  resources :users do
     resources :subscriptions
   end
 
